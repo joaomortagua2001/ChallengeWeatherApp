@@ -1,0 +1,193 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+
+.app-container > *:first-child {
+  flex: 1;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+
+
+.form-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-items: flex-end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.form-group input,
+.select-field {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.select-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.select-field {
+  background-color: white;
+}
+
+.form-search button {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.form-search button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #dc3545;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+
+
+.weather-display {
+  padding: 1rem;
+  text-align: center;
+}
+
+.previsao-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.previsao-card {
+  flex: 1 1 calc(50% - 1rem); 
+  max-width: calc(50% - 1rem);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.75rem 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.previsao-container .previsao-card:first-child {
+  border: 2px solid #2316d6; 
+  transform: scale(1.05); 
+}
+
+.dia {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.temperaturas {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp-min {
+  background-color: #00aaff;
+  color: white;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.temp-max {
+  background-color: #ff6600;
+  color: white;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+
+
+@media (max-width: 768px) {
+  .previsao-card {
+    flex: 1 1 calc(100% - 1rem);
+    max-width: 100%;
+  }
+
+  .form-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 0.5rem; 
+  }
+
+  .form-group:last-child {
+    margin-bottom: 0; 
+  }
+
+  .form-group input,
+  .select-field,
+  .form-search button {
+    width: 100%;
+  }
+
+  .form-search {
+    gap: 0.5rem; 
+  }
+}
